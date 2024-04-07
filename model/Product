@@ -1,0 +1,40 @@
+const EntitySchema = require('typeorm').EntitySchema
+
+const ProductEntity = new EntitySchema({
+    name: "Product",
+    target: "Product",
+    columns: {
+        id: {
+            primary: true,
+            type: "int",
+            generated: true
+        },
+        title: {
+            type: "varchar",
+            unique: true,
+            nullable: false
+        },
+        cost: {
+            type: "double",
+            nullable: false
+        },
+        description: {
+            type: "text",
+            nullable: false
+        },
+        quantity: {
+            type: "int",
+            nullable: false
+        }
+    },
+    relations: {
+        categories: {
+            target: "User",
+            type: "many-to-many",
+            joinTable: true,
+            cascade: true
+        }
+    }
+})
+
+module.exports = { ProductEntity }

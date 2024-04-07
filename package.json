@@ -1,0 +1,49 @@
+{
+  "name": "products-app-mariadb",
+  "version": "1.0.0",
+  "description": "CRUD App using NodeJs and MariaDB",
+  "main": "app.js",
+  "scripts": {
+    "start": "node --env-file=.env server.js",
+    "test": "jest",
+    "dev": "nodemon --env-file=.env server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/batsikask/node-products-app-mariadb.git"
+  },
+  "author": "batsikask",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/batsikask/node-products-app-mariadb/issues"
+  },
+  "homepage": "https://github.com/batsikask/node-products-app-mariadb#readme",
+  "jest": {
+    "maxConcurrency": 1,
+    "collectCoverage": true,
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/logs/"
+    ]
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.0.1",
+    "mongoose": "^8.2.4",
+    "mongoose-to-swagger": "^1.5.1",
+    "mongoose-unique-validator": "^5.0.0",
+    "mysql": "^2.18.1",
+    "swagger-ui-express": "^5.0.0",
+    "typeorm": "^0.3.20",
+    "winston": "^3.13.0",
+    "winston-daily-rotate-file": "^5.0.0",
+    "winston-mongodb": "^5.1.1"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.0",
+    "supertest": "^6.3.4"
+  }
+}
