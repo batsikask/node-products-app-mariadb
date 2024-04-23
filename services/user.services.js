@@ -5,8 +5,6 @@ async function findAll() {
     const result = await dataSource
     .getRepository(userEntity)
     .createQueryBuilder('user')
-    // .select('user')
-    // .from(userEntity, 'user')
     .getMany()
 
     return result
@@ -16,8 +14,6 @@ async function findOne(username) {
     const result = await dataSource
     .getRepository('user')
     .createQueryBuilder('user')
-    // .select('user')
-    // .from(userEntity, 'user')
     .where('user.username = :username', {username: username})
     .getOne()
     return result

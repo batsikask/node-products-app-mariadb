@@ -73,7 +73,7 @@ exports.delete = async(req, res) => {
     const username = req.params.username
     console.log("Delete user with username: " + username)
     try {
-        const result = await userService.deleteUser({username: username})
+        const result = await userService.deleteUser({username})
         res.status(200).json({data: result})
         logger.debug("User deleted -- " + username)
     } catch (err) {

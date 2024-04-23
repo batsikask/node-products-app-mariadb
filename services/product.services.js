@@ -5,8 +5,6 @@ async function findAll() {
     const result = await dataSource
         .getRepository(productEntity)
         .createQueryBuilder('product')
-        // .select('product')
-        // .from(productEntity, 'product')
         .getMany()
 
     return result
@@ -16,8 +14,6 @@ async function findOne(title) {
     const result = await dataSource
         .getRepository(productEntity)
         .createQueryBuilder()
-        .select('product')
-        .from(productEntity, 'product')
         .where('product.title = :title', { title: title })
         .getOne();
 

@@ -9,7 +9,7 @@ const dataSource = new typeorm.DataSource({
     port: 3306,
     username: "root",
     password: "",
-    database: "productsapp",
+    database: "test",
     synchronize: true,
     entities: [UserEntity, ProductEntity]
 })

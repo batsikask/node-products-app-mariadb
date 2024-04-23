@@ -68,7 +68,7 @@ exports.delete = async (req, res) => {
     const title = req.params.title
     console.log("Delete product: " + title)
     try {
-        const result = await productService.deleteProduct({title: title})
+        const result = await productService.deleteProduct({title})
         res.status(200).json({data: result})
         logger.debug("Product deleted: " +  title)
     } catch (err) {
